@@ -1,15 +1,23 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-body {
+#mainGrid {
   display: flex;
   flex-direction: column;
+}
+
+.cellRow {
+  display: flex;
+}
+
+.cell {
+  flex: auto;
+  min-width: 20px;
+  min-height: 20px;
+  aspect-ratio: 1;
+}
+
+.notHovered {
+  background: #999999;
+}
+
+.hovered {
+  background: #000000;
 }
