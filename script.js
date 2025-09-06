@@ -22,7 +22,22 @@ function buildGrid(size) {
       const cell = document.createElement("div");
       cell.className = "cell";
       cell.addEventListener("mouseover", () => {
+        if (cell.className === "cell active") {
+          if (cell.style.opacity < 1) {
+            cell.style.opacity += 0.1;
+          }
+          return;
+        }
         cell.className = "cell active";
+        cell.style.background =
+          "rgb(" +
+          Math.floor(Math.random() * 256) +
+          "," +
+          Math.floor(Math.random() * 256) +
+          "," +
+          Math.floor(Math.random() * 256) +
+          ")";
+        cell.style.opacity = 0.1;
       });
       cellRow.appendChild(cell);
     }
