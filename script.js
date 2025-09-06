@@ -24,7 +24,7 @@ function buildGrid(size) {
       cell.addEventListener("mouseover", () => {
         if (cell.className === "cell active") {
           if (cell.style.opacity < 1) {
-            cell.style.opacity += 0.1;
+            cell.style.opacity = parseFloat(cell.style.opacity) + 0.1;
           }
           return;
         }
