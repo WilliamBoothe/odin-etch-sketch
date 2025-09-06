@@ -1,3 +1,7 @@
+#adjustGrid {
+  margin: 10px;
+}
+
 #mainGrid {
   display: flex;
   flex-direction: column;
@@ -8,16 +12,11 @@
 }
 
 .cell {
+  background: #999999;
   flex: auto;
-  min-width: 20px;
-  min-height: 20px;
   aspect-ratio: 1;
 }
 
-.notHovered {
-  background: #999999;
-}
-
-.hovered {
+.cell.active {
   background: #000000;
 }
