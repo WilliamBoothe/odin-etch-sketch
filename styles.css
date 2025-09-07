@@ -12,11 +12,6 @@
 }
 
 .cell {
-  background: #999999;
   flex: auto;
   aspect-ratio: 1;
-}
-
-.cell.active {
-  background: #000000;
 }
