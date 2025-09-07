@@ -8,7 +8,8 @@ const adjustGrid = document.querySelector("button#adjustGrid");
 adjustGrid.addEventListener("click", () => {
   const userInput = promptUserForGridSize();
   if (userInput === null) return;
-  buildGrid(userInput);
+  gridSize = userInput;
+  buildGrid(gridSize);
 });
 
 function buildGrid(size) {
