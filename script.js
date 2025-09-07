@@ -16,9 +16,11 @@ function buildGrid(size) {
   const mainGrid = document.querySelector("div#mainGrid");
   mainGrid.replaceChildren();
 
+  // Grid rows
   for (let r = 0; r < size; r++) {
     const cellRow = document.createElement("div");
     cellRow.className = "cellRow";
+    // Grid columns
     for (let c = 0; c < size; c++) {
       const cell = document.createElement("div");
       cell.className = "cell";
@@ -30,14 +32,7 @@ function buildGrid(size) {
           return;
         }
         cell.className = "cell active";
-        cell.style.background =
-          "rgb(" +
-          Math.floor(Math.random() * 256) +
-          "," +
-          Math.floor(Math.random() * 256) +
-          "," +
-          Math.floor(Math.random() * 256) +
-          ")";
+        cell.style.background = generateRandomRgbColorCode();
         cell.style.opacity = 0.1;
       });
       cellRow.appendChild(cell);
@@ -69,4 +64,11 @@ function validateGridSizeInput(userInput) {
   if (userInput > gridMax) isValid = false;
 
   return isValid;
+}
+
+function generateRandomRgbColorCode() {
+  const r = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  return `rgb(${r},${g},${b})`;
 }
